@@ -12,7 +12,7 @@ const getAllVendors = async (req, res) => {
     }
 }
 
-const CreateVendor = async (req, res) => {
+const createVendor = async (req, res) => {
     try {
 
         const vendor= new Vendor(req.body)
@@ -51,7 +51,7 @@ const deleteVendors = async (req, res) => {
 
 module.exports={
     getAllVendors,
-    CreateVendor,
+    createVendor,
     updateVendor,
     deleteVendors
 }

@@ -2,7 +2,7 @@ const express = require('express')
 
 const {
     getAllVendors,
-    CreateVendor,
+    createVendor,
     updateVendor,
     deleteVendors
 
@@ -10,7 +10,7 @@ const {
 const vendor_router=express.Router()
 
 vendor_router.get('/getAllVendors',getAllVendors)
-vendor_router.post('/createVendor',CreateVendor)
+vendor_router.post('/createVendor',createVendor)
 vendor_router.put('/updateVendor/:id',updateVendor)
 vendor_router.delete('/deleteVendor/:id',deleteVendors)
 
