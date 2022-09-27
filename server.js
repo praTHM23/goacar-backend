@@ -5,7 +5,8 @@ const mongoose=require('mongoose')
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const router = require("./Routes/authRoutes");
-const vehi_router=require('./Routes/VehiRoutes')
+const vehi_router=require('./Routes/vehicleRoutes')
+const vendor_router = require("./Routes/vendorRoutes");
 const { requireAuthentication, checkUser } = require("./Middleware/authmiddleware");
 const authenticatToken = require("./Auth/verify");
 const roleAuthentication = require("./Auth/roleAuthentication");
@@ -45,6 +46,7 @@ mongoose.connect("mongodb+srv://Goacar:23022001@cluster0.7tvttev.mongodb.net/Goa
 //     })
 // })
 app.use(vehi_router)
+app.use(vendor_router)
 
 app.listen(port,()=>{
     console.log(`Server listening port http://localhost:${port}`);
